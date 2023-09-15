@@ -21,11 +21,16 @@ function getErrorMessage(error: unknown) {
 // }
 
 export const fetchUsers = createAsyncThunk(
+  //ещё как способ фетчить вместо RTKQuery
   "user/fetchAll",
   async (_, thunkAPI) => {
-    const response = await axios.get<IUser[]>(
-      "https://jsonplaceholder.typicode.com/users"
-    ); //фетч, полученные данные пришли в респонс
-    return response.data;
+    try {
+      const response = await axios.get<IUser[]>(
+        "https://jsonplaceholder.typicode.com/users"
+      ); //фетч, полученные данные пришли в респонс
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue("Не удалось загрузить пользователей");
+    }
   }
 );

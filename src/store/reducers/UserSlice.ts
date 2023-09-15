@@ -18,18 +18,6 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    usersFethcing(state) {
-      state.isLoading = true;
-    },
-    usersFethcingSucces(state, action: PayloadAction<IUser[]>) {
-      state.isLoading = false;
-      state.error = "";
-      state.users = action.payload; //всё что пришло в пейлоаде переходит к пользакам
-    },
-    usersFethcingError(state, action: PayloadAction<string>) {
-      state.isLoading = false;
-      state.error = action.payload; //ошибка приходит как строка из пейлоада
-    },
   },
   extraReducers: {
     [fetchUsers.fulfilled.type]: (state, action: PayloadAction<IUser[]>) => {
