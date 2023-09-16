@@ -4,10 +4,12 @@ import { IUser } from "../../models/IUser";
 import { userSlice } from "./UserSlice";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-function getErrorMessage(error: unknown) {
-  if (error instanceof Error) return error.message;
-  return String(error);
-}
+//СПОСОБ С RTK
+
+// function getErrorMessage(error: unknown) {
+//   if (error instanceof Error) return error.message;
+//   return String(error);
+// }
 
 //для асинхронного фетча
 // export const fetchUsers = () => async (dispatch: AppDispatch) => {
@@ -21,7 +23,8 @@ function getErrorMessage(error: unknown) {
 // }
 
 export const fetchUsers = createAsyncThunk(
-  //ещё как способ фетчить вместо RTKQuery
+  //extra reducers
+  //ещё как способ фетчить
   "user/fetchAll",
   async (_, thunkAPI) => {
     try {

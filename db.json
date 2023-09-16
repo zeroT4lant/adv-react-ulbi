@@ -4,6 +4,21 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "title": "penis",
+      "body": "penis",
+      "id": 2
+    },
+    {
+      "title": "aboba",
+      "body": "aboba",
+      "id": 3
+    },
+    {
+      "title": "new posst",
+      "body": "new posst",
+      "id": 4
     }
   ],
   "comments": [

@@ -9,7 +9,7 @@ const PostContainer2 = () => {
         <div className="post__list">
             {isLoading && <h1>Идёт загрузка...</h1>}
             {error && <h1>Ошибка, Козёл</h1>}
-            {posts && posts.map(post => <PostItem key={post.id} post={post}/>)}
+            {posts?.map(post => <PostItem key={post.id} post={post}/>)}
         </div>
     </div>
   )
